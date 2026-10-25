@@ -10,7 +10,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Load the FXML file
         FXMLLoader loader = new FXMLLoader(getClass().getResource(
                 "/io/github/filipdostal/towerdefense/fxml/main_layout.fxml"));
         Parent root = loader.load();
