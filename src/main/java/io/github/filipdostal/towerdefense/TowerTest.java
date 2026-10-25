@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 
 public class TowerTest extends Tower {
     public TowerTest(double x, double y) {
-        super(TowerType.DART, x, y, 40, 40);
+        super(TowerType.TOWERTEST, x, y, 40, 40);
     }
 
     @Override

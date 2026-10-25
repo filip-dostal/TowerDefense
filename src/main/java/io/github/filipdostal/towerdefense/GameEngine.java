@@ -47,7 +47,7 @@ public class GameEngine {
 
     private Tower createTower(TowerType type, double x, double y) {
         return switch (type) {
-            case DART -> new TowerTest(x, y);
+            case TOWERTEST -> new TowerTest(x, y);
         };
     }
 

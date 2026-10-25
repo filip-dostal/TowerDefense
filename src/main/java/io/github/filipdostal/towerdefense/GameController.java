@@ -51,6 +51,6 @@ public class GameController {
 
     @FXML
     private void buyTower() {
-        gameEngine.buyTower(TowerType.DART);
+        gameEngine.buyTower(TowerType.TOWERTEST);
     }
 }
