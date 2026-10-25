@@ -1,13 +1,11 @@
 package io.github.filipdostal.towerdefense;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 
 public class GameController {
 
@@ -42,9 +40,8 @@ public class GameController {
 
     protected void renderGame() {
         gc.drawImage(mapImage, 0, 0, GameConfig.CANVAS_WIDTH, GameConfig.CANVAS_HEIGHT);
-        gc.setFill(Color.BLUE);
-        for (Point2D tower : gameEngine.getPlacedTowers()) {
-            gc.fillRect(tower.getX() - 20, tower.getY() - 20, 40, 40);
+        for (Tower tower : gameEngine.getPlacedTowers()) {
+            tower.render(gc);
         }
     }
 

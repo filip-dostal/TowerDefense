@@ -1,14 +1,13 @@
 package io.github.filipdostal.towerdefense;
 
 import javafx.animation.AnimationTimer;
-import javafx.geometry.Point2D;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameEngine {
     private final GameController controller;
-    private final List<Point2D> placedTowers = new ArrayList<>();
+    private final List<Tower> placedTowers = new ArrayList<>();
     private TowerType towerToPlace = null;
     private int playerMoney = GameConfig.STARTING_MONEY;
 
@@ -40,13 +39,19 @@ public class GameEngine {
             return false;
         }
 
-        placedTowers.add(new Point2D(x, y));
+        placedTowers.add(createTower(towerToPlace, x, y));
         playerMoney -= towerToPlace.value;
         towerToPlace = null;
         return true;
     }
 
-    public List<Point2D> getPlacedTowers() {
+    private Tower createTower(TowerType type, double x, double y) {
+        return switch (type) {
+            case DART -> new TowerTest(x, y);
+        };
+    }
+
+    public List<Tower> getPlacedTowers() {
         return List.copyOf(placedTowers);
     }
 
