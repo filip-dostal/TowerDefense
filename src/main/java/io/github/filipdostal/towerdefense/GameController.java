@@ -25,7 +25,7 @@ public class GameController {
         gc.setImageSmoothing(false);
         mainContainer.setCenter(canvas);
         mapImage = new Image(getClass().getResourceAsStream(
-                "/io/github/filipdostal/towerdefense/png/map.png"));
+                "/io/github/filipdostal/towerdefense/map_pngs/map.png"));
 
         canvas.setOnMouseClicked(event -> {
             if (gameEngine.placeTower(event.getX(), event.getY())) {
@@ -43,6 +43,11 @@ public class GameController {
         for (Tower tower : gameEngine.getPlacedTowers()) {
             tower.render(gc);
         }
+
+        for (Enemy enemy : gameEngine.getEnemies()) {
+            enemy.render(gc);
+        }
+
     }
 
     private void updateMoneyLabel() {
