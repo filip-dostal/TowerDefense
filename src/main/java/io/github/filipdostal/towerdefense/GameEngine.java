@@ -82,7 +82,7 @@ public class GameEngine {
     private char[][] createGrid() {
         char[][] grid = new char[24][32];
 
-        try (BufferedReader br = new BufferedReader(new FileReader(GameConfig.MAP_GRID_PATH))) {
+        try (BufferedReader br = new BufferedReader(new java.io.InputStreamReader(GameEngine.class.getResourceAsStream(GameConfig.MAP_GRID_PATH)))) {
             String line;
             int row = 0;
             while ((line = br.readLine()) != null) {
